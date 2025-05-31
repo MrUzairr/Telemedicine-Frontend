@@ -20,7 +20,7 @@ const Navbar = () => {
     neurologist: false,
   });
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
-  const [isInitialized, setIsInitialized] = useState(false); // Track initialization
+  const [isInitialized, setIsInitialized] = useState(false); 
 
   const navigate = useNavigate();
   const isAuthenticated =
