@@ -21,7 +21,7 @@ const DoctorProfile = ({ doctor }) => {
         {/* Avatar */}
         <div className="flex-shrink-0 flex justify-center items-center mb-6 md:mb-0 md:mr-8">
           <img
-            src={`http://localhost:3005/images/${doctor.profilePicture}`}
+            src={`https://ten-reminiscent-sombrero.glitch.me/images/${doctor.profilePicture}`}
             alt={doctor.fullName}
             className="w-32 h-32 rounded-full border-4 border-indigo-100 object-cover"
           />

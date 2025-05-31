@@ -56,7 +56,7 @@ const DoctorCardsSection = () => {
     const fetchDoctors = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:3005/doc/getalldoctors");
+        const response = await axios.get("https://ten-reminiscent-sombrero.glitch.me/doc/getalldoctors");
         setDoctors(response.data.data);
       } catch (err) {
         setError(err.response?.data?.error || t('fetch_error', "Failed to fetch doctor details."));
@@ -104,7 +104,7 @@ const DoctorCardsSection = () => {
               >
                 <div className="h-48 overflow-hidden">
                   <img
-                    src={`http://localhost:3005/images/${card.profilePicture || card.image}`}
+                    src={`https://ten-reminiscent-sombrero.glitch.me/images/${card.profilePicture || card.image}`}
                     alt={card.fullName || card.title}
                     className="w-full h-full object-cover object-center object-top"
                     onError={(e) => (e.target.src = "/images/fallback-doctor.jpg")}
