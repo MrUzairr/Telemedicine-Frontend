@@ -1,0 +1,391 @@
+{
+  "en": {
+    "doctors": "Doctors",
+    "organizations": "Organizations",
+    "clinicians": "Clinicians",
+    "find_doctor": "Find doctor",
+    "dermatologist": "Dermatologist",
+    "gynecologist": "Gynecologist",
+    "neurologist": "Neurologist",
+    "lahore": "Lahore",
+    "islamabad": "Islamabad",
+    "karachi": "Karachi",
+    "talk_to_doctor": "Talk to a doctor",
+    "telemedicine": "Telemedicine",
+    "logout": "Logout",
+    "logout_success": "Logged out successfully",
+    "logout_error": "Error logging out",
+    "search_with_ai": "Search with AI",
+    "sign_in": "Sign in",
+    "register_now": "Register now",
+    "show": "Show",
+    "teladoc": "Teladoc",
+    "amwell": "Amwell",
+    "mdlive": "MDLIVE",
+    "doctor_on_demand": "Doctor On Demand",
+    "plushcare": "PlushCare",
+    "who_guidelines": "WHO Guidelines",
+    "cdc_training": "CDC Training",
+    "uptodate_resources": "UpToDate Resources",
+    "abim_certification": "ABIM Certification",
+    "physician_network": "Physician Network",
+    "hero": {
+      "baseText": "For your physical health. For your ",
+      "mentalHealth": "mental health",
+      "clinicians": "clinicians",
+      "hospitals": "hospitals",
+      "ending": ". For all of it in one place. For life.",
+      "forWord": "For"
+    },
+    "meet_doctors": "Meet Our Expert Doctors",
+    "fetch_error": "Failed to fetch doctor details.",
+    "get_care_now": "Get care now",
+    "doctor1_name": "Dr. Asim",
+    "doctor1_desc": "Anytime, anywhere, anything care",
+    "doctor2_name": "Dr. Bilal",
+    "doctor2_desc": "Find clinics near you",
+    "doctor3_name": "Dr. Tahira",
+    "doctor3_desc": "Get emergency help",
+    "doctor4_name": "Dr. Ahmed Khan",
+    "doctor4_desc": "Available 24/7 for consultations.",
+    "about": {
+      "title": "A high-quality care experience—anywhere, anytime",
+      "description": "It started with a simple yet revolutionary idea. That everyone should have access to the best healthcare anywhere in the world on their terms. That includes you.",
+      "link": "About us"
+    },
+      "slider": {
+        "slide1": {
+          "title": "Online Health Consultation",
+          "description": "Doctor talking to a patient via video call."
+        },
+        "slide2": {
+          "title": "Medical Discussion",
+          "description": "Medical team collaborating virtually."
+        },
+        "slide3": {
+          "title": "Telemedicine Setup",
+          "description": "Doctor preparing for online appointment."
+        },
+        "slide4": {
+          "title": "Nurse Monitoring",
+          "description": "Remote health monitoring and data input."
+        },
+        "slide5": {
+          "title": "E-Health System",
+          "description": "Modern software interface for patients."
+        }
+      },
+      "reviews": {
+        "title": "Our Customers Love Us",
+        "subtitle": "Hear from our happy clients who trust our telemedicine platform.",
+        "review1": {
+          "name": "Dr. Ayesha Khan",
+          "text": "Amazing telemedicine experience! Booking and consulting were seamless and fast."
+        },
+        "review2": {
+          "name": "Ali Raza",
+          "text": "I love how easy it was to speak to a specialist without waiting in a queue."
+        },
+        "review3": {
+          "name": "Sana Malik",
+          "text": "Efficient and user-friendly platform. Highly recommended for quick consultations."
+        }
+      },
+      "cmpSection": {
+        "title": "This is whole-person care.",
+        "button": "Get started"
+      },
+      "footer": {
+    "brand": {
+      "description": "Bridging healthcare and technology. Telemed connects patients with certified professionals for real-time consultations, prescriptions, and expert care—anytime, anywhere.",
+      "trusted": "Trusted by over 100,000 users nationwide."
+    },
+    "services": {
+      "title": "Our Services",
+      "consult": "Virtual Consultations",
+      "prescriptions": "Digital Prescriptions",
+      "therapy": "Mental Health Therapy",
+      "wellness": "Wellness Programs",
+      "lab": "Lab Tests at Home"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "blog": "Health Insights",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions"
+    },
+    "subscribe": {
+      "title": "Stay Updated",
+      "desc": "Subscribe for health tips, updates, and offers.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    },
+    "bottom": {
+      "rights": "All rights reserved.",
+      "compliance": "HIPAA & GDPR Compliant | Designed for a healthier tomorrow."
+    }
+  }
+  },
+  "ur": {
+    "doctors": "ڈاکٹرز",
+    "organizations": "تنظیمیں",
+    "clinicians": "کلینیشنز",
+    "find_doctor": "ڈاکٹر تلاش کریں",
+    "dermatologist": "جلد کے ڈاکٹر",
+    "gynecologist": "ماہر امراض نسواں",
+    "neurologist": "نیورولوجسٹ",
+    "lahore": "لاہور میں",
+    "islamabad": "اسلام آباد میں",
+    "karachi": "کراچی میں",
+    "talk_to_doctor": "ڈاکٹر سے بات کریں",
+    "telemedicine": "ٹیلی میڈیسن",
+    "logout": "لاگ آؤٹ",
+    "logout_success": "کامیابی سے لاگ آؤٹ ہو گئے",
+    "logout_error": "لاگ آؤٹ میں خرابی",
+    "search_with_ai": "AI کے ساتھ تلاش کریں",
+    "sign_in": "سائن ان",
+    "register_now": "ابھی رجسٹر کریں",
+    "show": "دکھائیں",
+    "teladoc": "ٹیلی ڈاک",
+    "amwell": "ایم ویل",
+    "mdlive": "ایم ڈی لائیو",
+    "doctor_on_demand": "ڈاکٹر آن ڈیمانڈ",
+    "plushcare": "پلش کیئر",
+    "who_guidelines": "ڈبلیو ایچ او گائیڈ لائنز",
+    "cdc_training": "سی ڈی سی تربیت",
+    "uptodate_resources": "اپ ٹو ڈیٹ وسائل",
+    "abim_certification": "اے بی آئی ایم سرٹیفیکیشن",
+    "physician_network": "فزیشن نیٹ ورک",
+    "hero": {
+      "baseText": "آپ کی جسمانی صحت کے لیے۔ آپ کی ",
+      "mentalHealth": "ذہنی صحت",
+      "clinicians": "کلینیشنز",
+      "hospitals": "ہسپتالوں",
+      "ending": "۔ یہ سب ایک جگہ پر۔ زندگی کے لیے۔",
+      "forWord": "کے لیے"
+    },
+    "meet_doctors": "ہمارے ماہر ڈاکٹروں سے ملیں",
+    "fetch_error": "ڈاکٹر کی تفصیلات حاصل کرنے میں ناکامی۔",
+    "get_care_now": "ابھی دیکھ بھال حاصل کریں",
+    "doctor1_name": "ڈاکٹر عاصم",
+    "doctor1_desc": "کسی بھی وقت، کہیں بھی، ہر قسم کی دیکھ بھال",
+    "doctor2_name": "ڈاکٹر بلال",
+    "doctor2_desc": "اپنے قریب کلینکس تلاش کریں",
+    "doctor3_name": "ڈاکٹر طاہرہ",
+    "doctor3_desc": "ہنگامی مدد حاصل کریں",
+    "doctor4_name": "ڈاکٹر احمد خان",
+    "doctor4_desc": "مشاورت کے لیے 24/7 دستیاب۔",
+    "about": {
+      "title": "کسی بھی وقت، کہیں بھی اعلیٰ معیار کا صحت کا تجربہ",
+      "description": "یہ ایک سادہ لیکن انقلابی خیال سے شروع ہوا۔ کہ ہر ایک کو دنیا میں کہیں بھی اپنی شرائط پر بہترین صحت کی سہولیات تک رسائی حاصل ہونی چاہیے۔ اس میں آپ بھی شامل ہیں۔",
+      "link": "ہمارے بارے میں"
+    },
+    "slider": {
+        "slide1": {
+          "title": "آن لائن صحت مشاورت",
+          "description": "ڈاکٹر ویڈیو کال کے ذریعے مریض سے بات کر رہا ہے۔"
+        },
+        "slide2": {
+          "title": "طبی بحث",
+          "description": "طبی ٹیم ورچوئلی تعاون کر رہی ہے۔"
+        },
+        "slide3": {
+          "title": "ٹیلی میڈیسن سیٹ اپ",
+          "description": "ڈاکٹر آن لائن ملاقات کی تیاری کر رہا ہے۔"
+        },
+        "slide4": {
+          "title": "نرس مانیٹرنگ",
+          "description": "ریموٹ صحت مانیٹرنگ اور ڈیٹا ان پٹ۔"
+        },
+        "slide5": {
+          "title": "ای-ہیلتھ سسٹم",
+          "description": "مریضوں کے لیے جدید سافٹ ویئر انٹرفیس۔"
+        }
+      },
+      "reviews": {
+        "title": "ہمارے صارفین ہمیں پسند کرتے ہیں",
+        "subtitle": "ہمارے خوش گاہکوں کی رائے سنیں جو ہماری ٹیلی میڈیسن سروس پر اعتماد کرتے ہیں۔",
+        "review1": {
+          "name": "ڈاکٹر عائشہ خان",
+          "text": "شاندار ٹیلی میڈیسن کا تجربہ! بکنگ اور مشاورت بہت آسان اور تیز تھی۔"
+        },
+        "review2": {
+          "name": "علی رضا",
+          "text": "مجھے یہ پسند آیا کہ کسی ماہر سے بات کرنا کتنا آسان تھا بغیر کسی قطار کے انتظار کے۔"
+        },
+        "review3": {
+          "name": "ثنا ملک",
+          "text": "موثر اور صارف دوست پلیٹ فارم۔ فوری مشاورت کے لیے بہت زیادہ تجویز کردہ۔"
+        }
+      },
+      "cmpSection": {
+    "title": "یہ مکمل نگہداشت ہے۔",
+    "button": "شروع کریں"
+  },
+  "footer": {
+    "brand": {
+      "description": "صحت اور ٹیکنالوجی کے درمیان پل۔ ٹیلی میڈ مریضوں کو ماہر ڈاکٹروں سے فوری رابطہ فراہم کرتا ہے۔",
+      "trusted": "پورے ملک میں 100,000 سے زائد صارفین کا اعتماد۔"
+    },
+    "services": {
+      "title": "ہماری خدمات",
+      "consult": "ورچوئل مشورے",
+      "prescriptions": "ڈیجیٹل نسخے",
+      "therapy": "ذہنی صحت کی تھراپی",
+      "wellness": "ویلنیس پروگرام",
+      "lab": "گھر پر لیبارٹری ٹیسٹ"
+    },
+    "company": {
+      "title": "کمپنی",
+      "about": "ہمارے بارے میں",
+      "careers": "کیریئرز",
+      "blog": "صحت سے متعلق بلاگز",
+      "privacy": "پرائیویسی پالیسی",
+      "terms": "شرائط و ضوابط"
+    },
+    "subscribe": {
+      "title": "تازہ ترین معلومات",
+      "desc": "صحت کے مشورے، اپڈیٹس اور آفرز حاصل کرنے کے لیے سبسکرائب کریں۔",
+      "placeholder": "اپنا ای میل درج کریں",
+      "button": "سبسکرائب کریں"
+    },
+    "bottom": {
+      "rights": "جملہ حقوق محفوظ ہیں۔",
+      "compliance": "HIPAA اور GDPR کے مطابق | ایک صحت مند کل کے لیے تیار کردہ۔"
+    }
+  }
+    
+    
+  },
+  "ar": {
+    "doctors": "الأطباء",
+    "organizations": "المنظمات",
+    "clinicians": "الأطباء السريريين",
+    "find_doctor": "ابحث عن طبيب",
+    "dermatologist": "طبيب الأمراض الجلدية",
+    "gynecologist": "طبيب نساء وتوليد",
+    "neurologist": "طبيب أعصاب",
+    "lahore": "في لاهور",
+    "islamabad": "في إسلام آباد",
+    "karachi": "في كراتشي",
+    "talk_to_doctor": "تحدث مع طبيب",
+    "telemedicine": "الطب عن بعد",
+    "logout": "تسجيل الخروج",
+    "logout_success": "تم تسجيل الخروج بنجاح",
+    "logout_error": "خطأ في تسجيل الخروج",
+    "search_with_ai": "البحث بالذكاء الاصطناعي",
+    "sign_in": "تسجيل الدخول",
+    "register_now": "سجل الآن",
+    "show": "عرض",
+    "teladoc": "تيلادوك",
+    "amwell": "أم ويل",
+    "mdlive": "إم دي لايف",
+    "doctor_on_demand": "طبيب عند الطلب",
+    "plushcare": "بلوش كير",
+    "who_guidelines": "إرشادات منظمة الصحة العالمية",
+    "cdc_training": "تدريب مراكز مكافحة الأمراض",
+    "uptodate_resources": "موارد أب تو ديت",
+    "abim_certification": "شهادة ABIM",
+    "physician_network": "شبكة الأطباء",
+    "hero": {
+      "baseText": "لصحتك الجسدية. لصحتك ",
+      "mentalHealth": "النفسية",
+      "clinicians": "الأطباء السريريين",
+      "hospitals": "المستشفيات",
+      "ending": ". كل ذلك في مكان واحد. من أجل الحياة.",
+      "forWord": "ل"
+    },
+    "meet_doctors": "تعرف على أطبائنا الخبراء",
+    "fetch_error": "فشل في جلب تفاصيل الطبيب.",
+    "get_care_now": "احصل على الرعاية الآن",
+    "doctor1_name": "د. عاصم",
+    "doctor1_desc": "رعاية في أي وقت وفي أي مكان ولأي شيء",
+    "doctor2_name": "د. بلال",
+    "doctor2_desc": "ابحث عن عيادات بالقرب منك",
+    "doctor3_name": "د. طاهرة",
+    "doctor3_desc": "احصل على مساعدة طارئة",
+    "doctor4_name": "د. أحمد خان",
+    "doctor4_desc": "متوفر على مدار الساعة للاستشارات.",
+    "about": {
+      "title": "تجربة رعاية عالية الجودة—في أي مكان وفي أي وقت",
+      "description": "بدأ الأمر بفكرة بسيطة لكنها ثورية. أن يكون للجميع إمكانية الوصول إلى أفضل الرعاية الصحية في أي مكان في العالم وفقًا لشروطهم. وهذا يشملك.",
+      "link": "معلومات عنا"
+    },
+    "slider": {
+        "slide1": {
+          "title": "استشارة صحية عبر الإنترنت",
+          "description": "طبيب يتحدث مع مريض عبر مكالمة فيديو."
+        },
+        "slide2": {
+          "title": "مناقشة طبية",
+          "description": "فريق طبي يتعاون افتراضيًا."
+        },
+        "slide3": {
+          "title": "إعداد الطب عن بُعد",
+          "description": "طبيب يستعد لموعد عبر الإنترنت."
+        },
+        "slide4": {
+          "title": "مراقبة الممرضة",
+          "description": "مراقبة صحية عن بُعد وإدخال البيانات."
+        },
+        "slide5": {
+          "title": "نظام الصحة الإلكترونية",
+          "description": "واجهة برمجية حديثة للمرضى."
+        }
+      },
+      "reviews": {
+    "title": "عملاؤنا يحبون خدماتنا",
+    "subtitle": "استمع إلى آراء عملائنا السعداء الذين يثقون في منصتنا الطبية عن بُعد.",
+    "review1": {
+      "name": "الدكتورة عائشة خان",
+      "text": "تجربة رائعة مع الطب عن بُعد! الحجز والاستشارة كانا سلسين وسريعين."
+    },
+    "review2": {
+      "name": "علي رضا",
+      "text": "أحببت سهولة التحدث مع أخصائي بدون الانتظار في الطابور."
+    },
+    "review3": {
+      "name": "سناء مالك",
+      "text": "منصة فعالة وسهلة الاستخدام. أوصي بها بشدة للاستشارات السريعة."
+    }
+  },
+  "cmpSection": {
+    "title": "هذا هو الرعاية الشاملة.",
+    "button": "ابدأ الآن"
+  },
+  "footer": {
+    "brand": {
+      "description": "جسر بين الرعاية الصحية والتكنولوجيا. تربط Telemed المرضى مع متخصصين معتمدين في الاستشارات الفورية.",
+      "trusted": "موثوق من قبل أكثر من 100,000 مستخدم في جميع أنحاء البلاد."
+    },
+    "services": {
+      "title": "خدماتنا",
+      "consult": "استشارات افتراضية",
+      "prescriptions": "الوصفات الرقمية",
+      "therapy": "علاج الصحة النفسية",
+      "wellness": "برامج العافية",
+      "lab": "اختبارات معملية في المنزل"
+    },
+    "company": {
+      "title": "الشركة",
+      "about": "معلومات عنا",
+      "careers": "الوظائف",
+      "blog": "مقالات صحية",
+      "privacy": "سياسة الخصوصية",
+      "terms": "الشروط والأحكام"
+    },
+    "subscribe": {
+      "title": "ابقَ على اطلاع",
+      "desc": "اشترك للحصول على نصائح صحية وتحديثات وعروض.",
+      "placeholder": "أدخل بريدك الإلكتروني",
+      "button": "اشترك"
+    },
+    "bottom": {
+      "rights": "جميع الحقوق محفوظة.",
+      "compliance": "متوافق مع HIPAA وGDPR | مصمم لمستقبل أكثر صحة."
+    }
+  }
+  }
+}

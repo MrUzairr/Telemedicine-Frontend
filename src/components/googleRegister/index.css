@@ -1,0 +1,54 @@
+.google-login{
+    margin: 30px auto;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    color: var(--text-color);
+    padding: 10px 126px;
+    text-decoration: none;
+    transition: all 1s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Horizontal offset, vertical offset, blur radius, color */
+    transition: box-shadow 0.3s ease; 
+
+}
+@media(max-width:450px){
+    .google-login{
+        padding: 10px 105px !important;
+    }
+}
+@media(max-width:430px){
+    .google-login{
+        margin: 25px !important;
+    }
+}
+
+@media(max-width:400px){
+    .google-login{
+        padding: 10px 90px !important;
+
+    }
+}
+@media(max-width:380px){
+    .google-login{
+        padding: 10px 75px !important;
+
+    }
+}
+@media(max-width:350px){
+    .google-login{
+        padding: 10px 65px !important;
+
+    }
+}
+@media(max-width:320px){
+    .google-login{
+        padding: 10px 55px !important;
+
+    }
+}
+.google-login:hover{
+    background-color: #b6b6b69f;
+    transition: all 1s;
+
+}

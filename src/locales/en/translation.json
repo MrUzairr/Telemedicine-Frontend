@@ -1,0 +1,44 @@
+{
+    "doctors": "Doctors",
+    "organizations": "Organizations",
+    "clinicians": "Clinicians",
+    "find_doctor": "Find doctor",
+    "dermatologist": "Dermatologist",
+    "gynecologist": "Gynecologist",
+    "neurologist": "Neurologist",
+    "lahore": "Lahore",
+    "islamabad": "Islamabad",
+    "karachi": "Karachi",
+    "talk_to_doctor": "Talk to a doctor",
+    "telemedicine": "Telemedicine",
+    "logout": "Logout",
+    "logout_success": "Logged out successfully",
+    "logout_error": "Error logging out",
+    "search_with_ai": "Search with AI",
+    "sign_in": "Sign in",
+    "register_now": "Register now",
+    "show": "Show",
+    "teladoc": "Teladoc",
+    "amwell": "Amwell",
+    "mdlive": "MDLIVE",
+    "doctor_on_demand": "Doctor On Demand",
+    "plushcare": "PlushCare",
+    "who_guidelines": "WHO Guidelines",
+    "cdc_training": "CDC Training",
+    "uptodate_resources": "UpToDate Resources",
+    "abim_certification": "ABIM Certification",
+    "physician_network": "Physician Network",
+    "hero": {
+    "baseText": "For your physical health. For your ",
+    "mentalHealth": "mental health",
+    "clinicians": "clinicians",
+    "hospitals": "hospitals",
+    "ending": ". For all of it in one place. For life.",
+    "forWord": "For"
+  }
+  }
+
+  
+
+
+  

@@ -1,0 +1,70 @@
+
+.form-class {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.gap-class {
+  gap: 1rem;
+}
+
+.button-class {
+  width: 48%;
+}
+
+.input-class {
+  width: 100%;
+  padding: 0.75rem;
+  margin-left: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.label-class {
+  font-weight: 500;
+  text-align:justify;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.d-flex.gap-3 {
+  gap: 1rem;
+}
+
+/* Phone input field styles */
+.phone-input-class {
+  width: 100%;
+  padding: 0.75rem;
+  padding-right: 0rem;
+  margin-left: 0; /* Remove the left margin */
+  margin-right: 0; /* Remove the right margin if needed */
+  border-radius: 8px;
+  /* border: 1px solid #ccc; */
+  font-size: 1rem;
+  display: flex;
+  align-items: center; /* Ensure text and flag align properly */
+  /* background-color: #fff; */
+}

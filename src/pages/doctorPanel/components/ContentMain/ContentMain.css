@@ -1,0 +1,244 @@
+.main-content-holder {
+  margin: 20px;
+}
+
+.doctor-dashboard {
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+}
+
+.patient-list {
+  margin-top: 20px;
+}
+
+.patient-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.patient-info {
+  width: 70%;
+}
+
+.patient-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.patient-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.patient-info .pending {
+  color: #ff9800;
+}
+
+.patient-info .approved {
+  color: #4caf50;
+}
+
+.patient-info .rejected {
+  color: #f44336;
+}
+
+.action-buttons {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.approve-btn,
+.reject-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.approve-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.approve-btn:hover {
+  background-color: #45a049;
+}
+
+.reject-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: #e53935;
+}
+/* Style for the Join Now section */
+.additional-info {
+  background-color: #f4f4f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.additional-info h3 {
+  font-size: 22px;
+  color: #333;
+}
+
+.additional-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for grid items */
+.grid-two-item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.additional-grid-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.additional-grid-item p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Patient Reviews Section */
+.extra-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.extra-section h3 {
+  font-size: 22px;
+  color: #333;
+}
+
+.extra-section p {
+  font-size: 16px;
+  color: #555;
+}
+
+.extra-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.extra-section li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+
+
+/* main content holder
+.main-content-holder {
+  display: grid;
+  row-gap: 20px;
+}
+.content-grid-one {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+}
+.content-grid-two {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+}
+
+.subgrid-two {
+  display: grid;
+  row-gap: 20px;
+  height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .content-grid-one,
+  .content-grid-two {
+    column-gap: 12px;
+  }
+  .main-content-holder,
+  .subgrid-two {
+    row-gap: 12px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .content-grid-one {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 12px;
+  }
+  .content-grid-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content-grid-two .grid-two-item:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .content-grid-two .grid-two-item:nth-child(3) .subgrid-two {
+    grid-template-columns: repeat(2, 1fr);
+    height: 220px;
+    column-gap: 12px;
+  }
+  .content-grid-two {
+    row-gap: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-grid-one {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0;
+  }
+  .content-grid-two {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0;
+  }
+  .content-grid-two .grid-two-item:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .content-grid-two .grid-two-item:nth-child(3) .subgrid-two {
+    grid-template-columns: repeat(1, 1fr);
+    height: auto;
+  }
+  .content-grid-two .grid-two-item:nth-child(3) .subgrid-two .subgrid-two-item {
+    height: 220px;
+  }
+} */

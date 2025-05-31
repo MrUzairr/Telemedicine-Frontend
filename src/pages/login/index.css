@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.reg-container{
+    width: 100%;
+}
+.reg-form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align elements to the left */
+    text-align: left; /* Ensure text in the form is left-aligned */
+}
+
+.reg-data{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    text-align: left; /* Ensure text in the form is left-aligned */
+
+}
+.reg-data > h2{
+    font-size: 38px;
+    font-weight: 900;
+}
+@media(max-width:450px){
+    .reg-data > h2{
+        padding: 25px;
+    }
+    .reg-inputs{
+        width: 380px !important;
+    }
+    .reg-submit{
+        padding: 10px 168px !important;
+    }
+}
+@media(max-width:430px){
+    .reg-inputs{
+        margin: 25px !important;
+    }
+    .reg-labels{
+        margin: auto 25px !important;
+
+    }
+    .reg-submit{
+        margin: auto 25px !important;
+
+    }
+}
+@media(max-width:400px){
+    .reg-inputs{
+        width: 350px !important;
+    }
+    .reg-submit{
+        padding: 10px 153px !important;
+    }
+}
+@media(max-width:380px){
+    .reg-inputs{
+        width: 320px !important;
+    }
+    .reg-submit{
+        padding: 10px 138px !important;
+    }
+}
+@media(max-width:350px){
+    .reg-inputs{
+        width: 300px !important;
+    }
+    .reg-submit{
+        padding: 10px 128px !important;
+    }
+}
+@media(max-width:320px){
+    .reg-inputs{
+        width: 280px !important;
+    }
+    .reg-submit{
+        padding: 10px 118px !important;
+    }
+}
+.reg-inputs{
+    width: 420px;
+    font-size: 18px;
+    padding: 8px 5px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.reg-labels{
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+.reg-submit{
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 192px;
+    text-decoration: none;
+    transition: all 1s;
+}
+.reg-submit:hover{
+    background-color: var(--text-color);
+}
+.reg-create-account{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px !important;
+}
+.reg-create-account .create-account{
+    color:#0060FC; 
+    text-decoration:none;
+
+}
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .error {
+    border-color: red;
+  }
+  

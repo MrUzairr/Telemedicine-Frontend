@@ -1,0 +1,354 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+/* .home-front{
+  background-image: url('../../../public/doctor-pic.jpg');
+  background-size: cover; 
+  background-position: center -30px; 
+  height: 100vh; 
+  width: 100%; 
+  color: white; 
+}
+.home-front>div{
+  padding-top: 20px;
+} */
+.home-body{
+  display: flex;
+  justify-content: center;
+}
+.home-body>.home-body-top-content{
+  margin-top: 60px;
+  text-align: center;
+  width: 50%;
+}
+.home-body-top-content a{
+  text-decoration: none;
+  font-weight: bolder;
+}
+.home-body-top-content a:hover{
+  text-decoration: underline;
+}
+.home-body-cards {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 20px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); Horizontal offset, vertical offset, blur radius, color */
+  transition: box-shadow 0.3s ease; 
+}
+
+
+/* Card Section */
+@media(max-width:800px){
+  .home-body-card-part{
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .home-body-cards{
+    margin-bottom: 40px !important;
+  }
+}
+.home-body-card-part{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 60px;
+}
+
+.home-body-cards:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* On hover: stronger shadow */
+}
+.home-body-cards > .home-body-cards-content{
+  padding: 20px;
+}
+.home-body-cards > .home-body-cards-image {
+  border-radius: 20px 20px 0 0; /* Apply rounded corners to the top part */
+  overflow: hidden;
+
+}
+.home-body-cards > .home-body-cards-image {
+  position: relative;
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Ensure the container has a set height */
+}
+
+.home-body-cards > .home-body-cards-image img {
+  width: 100%; /* Image takes full width of the container */
+  height: 100%; /* Image takes full height of the container */
+  object-fit: cover; /* Cover the container without stretching the image */
+  object-position: top center;
+  border-radius: 0 0 20px 20px; /* Apply rounded corners to the bottom part */
+}
+
+
+.home-body-about {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the children horizontally */
+  text-align: center; /* Center the text inside the elements */
+}
+
+.home-body-about h2 {
+  max-width: 500px; /* Set a max-width for the elements */
+  width: 100%; /* Make the width responsive, but limit by max-width */
+  margin: 0 auto; /* Center the elements horizontally */
+  padding: 0 20px; /* Optional: add some padding for better readability */
+}
+.home-body-about p {
+  max-width: 800px; /* Set a max-width for the elements */
+  width: 100%; /* Make the width responsive, but limit by max-width */
+  padding: 0 20px; /* Optional: add some padding for better readability */
+  margin-top: 20px; /* Add some space between the h2 and p tags */
+}
+.home-body-about a{
+  margin-top: 20px;
+  text-decoration: none;
+  padding: 8px 30px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: all 1s;
+}
+.home-body-about a:hover{
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+
+}
+.home-body-slider{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-body-review{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+@media(max-width:800px){
+  .home-body-review-card{
+    flex-direction: column !important;
+    align-items: center;
+    margin-bottom: 40px !important;
+  }
+  .home-body-review-card-data{
+    margin-bottom: 40px !important;
+    
+  }
+}
+.home-body-review-card{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.home-body-review-card-data{
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+
+}
+.home-body-review-card-data-stars{
+  margin-top: 10px;
+}
+
+.home-body-review-card-data img{
+  width: 70px; /* Set width to the desired dimension */
+  height: 70px; /* Set the height as desired */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  border-radius: 50%;
+}
+@media(max-width:800px){
+  @media (max-width: 800px) {
+    .home-body-cmp-container {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      justify-content: center; /* Vertically center the items */
+      align-items: center; /* Horizontally center the items */
+      height: 100vh; /* Ensure the container fills the viewport height */
+    }
+  
+    .home-body-cmp-container h2,
+    .home-body-cmp-container a {
+      position: static !important;
+      transform: translateY(0%) !important;
+      margin: 0 !important; /* Add spacing between elements */
+      text-align: center; /* Ensure text alignment is centered */
+    }
+    .home-body-cmp-container a{
+      margin-top: 10px !important;
+    }
+  }
+}
+/*
+.home-body-cmp-container {
+  margin-top: 100px;
+  height: 500px;
+  position: relative;
+  background-image: url("../../../public/flat-lay-medical-composition.jpg");
+  background-size: cover; 
+  background-position: center top; 
+  background-repeat: no-repeat;
+}
+
+.home-body-cmp-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1;
+}
+
+.home-body-cmp-container > * {
+  color: #fff;
+  position: relative; 
+  z-index: 2; 
+}
+
+.home-body-cmp-container h2,
+.home-body-cmp-container a {
+  position: absolute;
+  left: 200px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+.home-body-cmp-container h2{
+  font-size: 40px;
+}
+.home-body-cmp-container a {
+  margin-top: 60px; 
+  display: inline-block;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  padding: 6px 25px;
+  text-decoration: none;
+  transition: all 1s;
+
+}
+.home-body-cmp-container a:hover{
+  background-color: var(--text-color);
+} */
+
+.home-body-footer {
+  background-color: #fff;
+  color: var(--text-color);
+  padding: 40px 20px;
+}
+@media(max-width: 800px){
+  .footer-content {
+    flex-direction: column !important;
+  }
+
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  flex: 1;
+  margin-right: 30px;
+}
+
+.footer-logo h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+.footer-links {
+  flex: 1;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact {
+  flex: 1;
+  margin-top: 20px;
+}
+
+.footer-contact p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-contact li {
+  margin-bottom: 10px;
+}
+
+.footer-socials {
+  flex: 1;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.footer-socials a {
+  color: #fff;
+  font-size: 1.5em;
+  margin-left: 15px;
+}
+
+.footer-socials a:hover {
+  color: #ffd700; /* Gold color on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+  font-weight: lighter;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}

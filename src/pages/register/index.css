@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.reg-container{
+    width: 100%;
+}
+.reg-form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align elements to the left */
+}
+
+.reg-data{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+
+}
+.reg-inputs{
+    width: 420px;
+    font-size: 18px;
+    padding: 8px 5px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.reg-labels{
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+.reg-submit1{
+    padding: 10px 206px !important;
+}
+.reg-submit{
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 192px;
+    text-decoration: none;
+    transition: all 1s;
+}
+.reg-submit:hover{
+    background-color: var(--text-color);
+}
+.reg-data .reg-back{
+    text-align: left;
+    width: 27%;
+    color: var(--light-blue);
+    text-decoration: none;
+}
+.reg-data .reg-main-heading-content{
+    text-align: left;
+    width: 27%;
+}
+.reg-data .reg-main-heading{
+    text-align: left;
+    width: 27%;
+}
+.reg-data .reg-required{
+    text-align: left;
+    width: 27%;
+}
+
+@media(max-width:450px){
+    .reg-data > .reg-back,.reg-data > .reg-main-heading,.reg-data > .reg-main-heading-content,.reg-data > .reg-required{
+        width: 100% !important;
+        padding: 10px 25px;
+    }
+    .reg-inputs{
+        width: 380px !important;
+    }
+    .reg-submit{
+        padding: 10px 168px !important;
+    }
+}
+@media(max-width:430px){
+    .reg-inputs{
+        margin: 25px !important;
+    }
+    .reg-labels{
+        margin: auto 25px !important;
+
+    }
+    .reg-submit{
+        margin: auto 25px !important;
+
+    }
+}
+@media(max-width:400px){
+    .reg-inputs{
+        width: 350px !important;
+    }
+    .reg-submit{
+        padding: 10px 153px !important;
+    }
+}
+@media(max-width:380px){
+    .reg-inputs{
+        width: 320px !important;
+    }
+    .reg-submit{
+        padding: 10px 138px !important;
+    }
+}
+@media(max-width:350px){
+    .reg-inputs{
+        width: 300px !important;
+    }
+    .reg-submit{
+        padding: 10px 128px !important;
+    }
+}
+@media(max-width:320px){
+    .reg-inputs{
+        width: 280px !important;
+    }
+    .reg-submit{
+        padding: 10px 118px !important;
+    }
+}
+.errorMessage{
+    color: #ea3943;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
