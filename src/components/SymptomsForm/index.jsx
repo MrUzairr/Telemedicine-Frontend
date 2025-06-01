@@ -64,6 +64,7 @@ const SymptomsForm = () => {
   
     try {
       const response = await fetch("https://ten-reminiscent-sombrero.glitch.me/patient-symptoms/submit", {
+      // const response = await fetch("http://localhost:3006/patient-symptoms/submit", {
         method: "POST",
         body: formData,
       });

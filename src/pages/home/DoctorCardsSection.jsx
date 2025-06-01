@@ -104,7 +104,7 @@ const DoctorCardsSection = () => {
               >
                 <div className="h-48 overflow-hidden">
                   <img
-                    src={`https://ten-reminiscent-sombrero.glitch.me/images/${card.profilePicture || card.image}`}
+                    src={`https://ten-reminiscent-sombrero.glitch.me/public/images/${card.profilePicture || card.image}`}
                     alt={card.fullName || card.title}
                     className="w-full h-full object-cover object-center object-top"
                     onError={(e) => (e.target.src = "/images/fallback-doctor.jpg")}

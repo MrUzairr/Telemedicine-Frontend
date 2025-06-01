@@ -5,15 +5,18 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { TranslationProvider } from './context/provider/TranslationContext';
+import { NotificationProvider } from './context/provider/NotificationContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
+  <NotificationProvider>
   <TranslationProvider>
     <App />
   </TranslationProvider>
+  </NotificationProvider>
   </BrowserRouter>
 );
 

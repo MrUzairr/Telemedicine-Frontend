@@ -5,20 +5,10 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { login, visitDoctor } from "../../api";
 import { useNavigate } from "react-router-dom";
+import { useNotification } from "../../context/provider/NotificationContext";
 import { ToastContainer, toast } from "react-toastify";
 import { FaChevronLeft } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
-
-const handleError = (message) => {
-  toast.error(message, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-  });
-};
 
 const Login = () => {
   const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
@@ -28,7 +18,7 @@ const Login = () => {
       <GoogleLogin />
     </GoogleOAuthProvider>
   );
-
+  const { showNotification } = useNotification();
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [doctors, setDoctors] = useState([]);
@@ -44,6 +34,14 @@ const Login = () => {
       } catch (err) {
         setError(err.response?.data?.error || "Failed to fetch doctor details.");
         setLoading(false);
+        toast.error(err.response?.data?.error || "Failed to fetch doctor details.", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       }
     };
     fetchDoctors();
@@ -61,35 +59,38 @@ const Login = () => {
 
         if (response && response.data) {
           const user = response.data;
-
-          if (user.isAdmin) {
-            localStorage.setItem("adminAuth", "true");
-          } else if (user.isDoctor) {
-            localStorage.setItem("doctorAuth", JSON.stringify(user));
-          } else {
-            localStorage.setItem("userAuth", "true");
-          }
-
-          toast.success("Login successful!", {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          });
+          showNotification("Login successful!", "success")
 
           setTimeout(() => {
-            if (user.isAdmin) navigate("/admin");
-            else if (user.isDoctor) navigate("/doctor");
-            else navigate("/");
-          }, 2500);
+            localStorage.removeItem("adminAuth");
+            localStorage.removeItem("doctorAuth");
+            localStorage.removeItem("userAuth");
+          
+            if (user.isAdmin) {
+              localStorage.setItem("adminAuth", "true");
+              navigate("/admin");
+            } else if (user.isDoctor) {
+              localStorage.setItem("doctorAuth", JSON.stringify(user));
+              navigate("/doctor");
+            } else {
+              localStorage.setItem("userAuth", "true");
+              navigate("/");
+            }
+          }, 1500);
+          
         } else {
-          handleError("Invalid email or password");
+          showNotification("Login failed.", "error")
           setError("Invalid email or password");
         }
       } catch (err) {
-        handleError(err.response?.data?.error || "Something went wrong. Please try again.");
+        toast.error(err.response?.data?.error || "Something went wrong. Please try again.", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
         setError(err.response?.data?.error || "Login failed.");
       }
     },
@@ -97,8 +98,9 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 px-4">
+      <ToastContainer />
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
-      <button
+        <button
           type="button"
           onClick={() => navigate(-1)}
           className="self-start text-blue-600 mb-4 flex items-center gap-1 hover:underline"
@@ -107,6 +109,7 @@ const Login = () => {
         </button>
         <h2 className="text-3xl font-extrabold mb-8 text-gray-900 text-center">Sign in to your account</h2>
         <form onSubmit={formik.handleSubmit} className="space-y-6 text-left">
+          {/* ... rest of your form code ... */}
           <div>
             <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
               Email<span className="text-red-500">*</span>
@@ -172,14 +175,205 @@ const Login = () => {
         <div className="text-center mt-4">
           {error && <p className="text-red-600 text-sm font-medium">{error}</p>}
         </div>
-
-        <ToastContainer />
       </div>
     </div>
   );
 };
 
 export default Login;
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import GoogleLogin from "../../components/googleLogin";
+// import { GoogleOAuthProvider } from "@react-oauth/google";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
+// import { login, visitDoctor } from "../../api";
+// import { useNavigate } from "react-router-dom";
+// import { ToastContainer, toast } from "react-toastify";
+// import { FaChevronLeft } from "react-icons/fa";
+// import "react-toastify/dist/ReactToastify.css";
+
+// const handleError = (message) => {
+//   toast.error(message, {
+//     position: "top-right",
+//     autoClose: 5000,
+//     hideProgressBar: false,
+//     closeOnClick: true,
+//     pauseOnHover: true,
+//     draggable: true,
+//   });
+// };
+
+// const Login = () => {
+//   const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+
+//   const GoogleWrapper = () => (
+//     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+//       <GoogleLogin />
+//     </GoogleOAuthProvider>
+//   );
+
+//   const navigate = useNavigate();
+//   const [error, setError] = useState("");
+//   const [doctors, setDoctors] = useState([]);
+//   const [loading, setLoading] = useState(false);
+
+//   useEffect(() => {
+//     const fetchDoctors = async () => {
+//       try {
+//         setLoading(true);
+//         const response = await visitDoctor();
+//         setDoctors(response.data.data);
+//         setLoading(false);
+//       } catch (err) {
+//         setError(err.response?.data?.error || "Failed to fetch doctor details.");
+//         setLoading(false);
+//       }
+//     };
+//     fetchDoctors();
+//   }, []);
+
+//   const formik = useFormik({
+//     initialValues: { email: "", password: "" },
+//     validationSchema: Yup.object({
+//       email: Yup.string().email("Invalid email address").required("Required"),
+//       password: Yup.string().min(6, "Password must be at least 6 characters").required("Required"),
+//     }),
+//     onSubmit: async (values) => {
+//       try {
+//         const response = await login(values);
+
+//         if (response && response.data) {
+//           const user = response.data;
+
+//           console.log("user",user)
+//           toast.success("Login successful!", {
+//             position: "top-right",
+//             autoClose: 3000,
+//             hideProgressBar: false,
+//             closeOnClick: true,
+//             pauseOnHover: true,
+//             draggable: true,
+//           });
+
+//           setTimeout(() => {
+//             localStorage.removeItem("adminAuth");
+//             localStorage.removeItem("doctorAuth");
+//             localStorage.removeItem("userAuth");
+          
+//             if (user.isAdmin) {
+//               localStorage.setItem("adminAuth", "true");
+//               navigate("/admin");
+//             } else if (user.isDoctor) {
+//               localStorage.setItem("doctorAuth", JSON.stringify(user));
+//               navigate("/doctor");
+//             } else {
+//               localStorage.setItem("userAuth", "true");
+//               navigate("/");
+//             }
+//           }, 1500); // delay for 1.5 seconds to allow toast to show
+          
+//         } else {
+//           handleError("Invalid email or password");
+//           setError("Invalid email or password");
+//         }
+//       } catch (err) {
+//         handleError(err.response?.data?.error || "Something went wrong. Please try again.");
+//         setError(err.response?.data?.error || "Login failed.");
+//       }
+//     },
+//   });
+
+//   return (
+//     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 px-4">
+//       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
+//       <button
+//           type="button"
+//           onClick={() => navigate(-1)}
+//           className="self-start text-blue-600 mb-4 flex items-center gap-1 hover:underline"
+//         >
+//           <FaChevronLeft /> Back
+//         </button>
+//         <h2 className="text-3xl font-extrabold mb-8 text-gray-900 text-center">Sign in to your account</h2>
+//         <form onSubmit={formik.handleSubmit} className="space-y-6 text-left">
+          // <div>
+          //   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
+          //     Email<span className="text-red-500">*</span>
+          //   </label>
+          //   <input
+          //     id="email"
+          //     name="email"
+          //     type="email"
+          //     autoComplete="email"
+          //     className={`w-full px-4 py-2 border rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          //       formik.touched.email && formik.errors.email ? "border-red-500" : "border-gray-300"
+          //     }`}
+          //     onChange={formik.handleChange}
+          //     onBlur={formik.handleBlur}
+          //     value={formik.values.email}
+          //     required
+          //   />
+          //   {formik.touched.email && formik.errors.email && (
+          //     <p className="text-red-600 text-sm mt-1">{formik.errors.email}</p>
+          //   )}
+          // </div>
+
+          // <div>
+          //   <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-1">
+          //     Password<span className="text-red-500">*</span>
+          //   </label>
+          //   <input
+          //     id="password"
+          //     name="password"
+          //     type="password"
+          //     autoComplete="current-password"
+          //     className={`w-full px-4 py-2 border rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          //       formik.touched.password && formik.errors.password ? "border-red-500" : "border-gray-300"
+          //     }`}
+          //     onChange={formik.handleChange}
+          //     onBlur={formik.handleBlur}
+          //     value={formik.values.password}
+          //     required
+          //   />
+          //   {formik.touched.password && formik.errors.password && (
+          //     <p className="text-red-600 text-sm mt-1">{formik.errors.password}</p>
+          //   )}
+          // </div>
+
+          // <button
+          //   type="submit"
+          //   className="w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition"
+          // >
+          //   Login
+          // </button>
+//         </form>
+
+//         <div className="my-6">
+//           <GoogleWrapper />
+//         </div>
+
+//         <div className="text-center">
+//           <a href="/signup" className="text-blue-600 hover:text-blue-800 font-medium transition">
+//             Create new account
+//           </a>
+//         </div>
+
+//         <div className="text-center mt-4">
+//           {error && <p className="text-red-600 text-sm font-medium">{error}</p>}
+//         </div>
+//         <ToastContainer />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Login;
 
 
 

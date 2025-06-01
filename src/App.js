@@ -8,20 +8,13 @@ import Main from './pages/admin/main';
 import DoctorMain from './pages/doctorPanel/doctormain';
 import PaletteManager from './pages/palette';
 import DoctorInfo from './pages/doctor';
-// import Protected from './components/Protected/Protected';
 import Protected1 from './components/Protected1/Protected1';
 import SymptomsForm from './components/SymptomsForm';
 import Task from './pages/task';
 import TableData from './pages/asanaDatabaseData';
-
-
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
-  // Pull auth status from localStorage
-  const isAuth = localStorage.getItem("userAuth") || localStorage.getItem("adminAuth") || localStorage.getItem("doctorAuth");
-  const isAdmin = localStorage.getItem("adminAuth");
-  const doctorData = localStorage.getItem("doctorAuth");
-
   return (
     <div className="App">
       <Routes>
@@ -29,39 +22,111 @@ function App() {
         <Route path="/signup" element={<Register />} />
         <Route path="/signin" element={<Login />} />
 
-        {/* Admin route - protected */}
+        {/* Admin Route */}
         <Route 
-          path="/admin"  
+          path="/admin" 
           element={
-            <Protected1 isAuth={isAdmin}>
+            <Protected1 role="admin">
               <Main />
             </Protected1>
           } 
         />
 
-        {/* Doctor route - protected */}
+        {/* Doctor Route */}
         <Route 
           path="/doctor" 
           element={
-            <Protected1 isAuth={doctorData} doctor={JSON.parse(doctorData)}>
+            <Protected1 role="doctor">
               <DoctorMain />
             </Protected1>
           } 
         />
 
-        <Route path="/doctorinfo" element={<DoctorInfo />} />  
-        <Route path="/symptoms" element={<SymptomsForm />} />  
-        <Route path="/task" element={<Task />} />  
-        <Route path="/asanaData" element={<TableData />} />  
+        <Route path="/doctorinfo" element={<DoctorInfo />} />
+        <Route path="/symptoms" element={<SymptomsForm />} />
+        <Route path="/task" element={<Task />} />
+        <Route path="/asanaData" element={<TableData />} />
         <Route path="/palette" element={<PaletteManager />} />
-        
+
+        {/* Fallback Route */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+// import './App.css';
+// import { Routes, Route } from 'react-router-dom';
+// import Home from './pages/home';
+// import Register from './pages/register';
+// import PageNotFound from './pageNotFound';
+// import Login from './pages/login';
+// import Main from './pages/admin/main';
+// import DoctorMain from './pages/doctorPanel/doctormain';
+// import PaletteManager from './pages/palette';
+// import DoctorInfo from './pages/doctor';
+// // import Protected from './components/Protected/Protected';
+// import Protected1 from './components/Protected1/Protected1';
+// import SymptomsForm from './components/SymptomsForm';
+// import Task from './pages/task';
+// import TableData from './pages/asanaDatabaseData';
+
+
+
+// function App() {
+//   // Pull auth status from localStorage
+//   const isAuth = localStorage.getItem("userAuth") || localStorage.getItem("adminAuth") || localStorage.getItem("doctorAuth");
+//   const isAdmin = localStorage.getItem("adminAuth");
+//   const doctorData = localStorage.getItem("doctorAuth");
+
+//   return (
+//     <div className="App">
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/signup" element={<Register />} />
+//         <Route path="/signin" element={<Login />} />
+
+//         {/* Admin route - protected */}
+//         <Route 
+//           path="/admin"  
+//           element={
+//             <Protected1 isAuth={isAuth} isAdmin={isAdmin}>
+//               <Main />
+//             </Protected1>
+//           } 
+//         />
+
+//         {/* Doctor route - protected */}
+//         <Route 
+//           path="/doctor" 
+//           element={
+//             <Protected1 isAuth={doctorData} doctor={JSON.parse(doctorData)}>
+//               <DoctorMain />
+//             </Protected1>
+//           } 
+//         />
+
+//         <Route path="/doctorinfo" element={<DoctorInfo />} />  
+//         <Route path="/symptoms" element={<SymptomsForm />} />  
+//         <Route path="/task" element={<Task />} />  
+//         <Route path="/asanaData" element={<TableData />} />  
+//         <Route path="/palette" element={<PaletteManager />} />
+        
+//         <Route path="*" element={<PageNotFound />} />
+//       </Routes>
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
 
