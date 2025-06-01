@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ChatBot from "../../pages/chatbot";
-import './index.css'
+import './index.css';
 
 const SymptomsForm = () => {
   const [name, setName] = useState("");
@@ -12,6 +12,8 @@ const SymptomsForm = () => {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [prediction, setPrediction] = useState("");
+  const [confidence, setConfidence] = useState("");
+  const [recommendedDoctors, setRecommendedDoctors] = useState([]);
   const [openDialog, setOpenDialog] = useState(false);
   const [showChatbot, setShowChatbot] = useState(false);
 
@@ -26,13 +28,15 @@ const SymptomsForm = () => {
     }
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:5000/predict", {
+      const response = await fetch("https://forested-fork-wrist.glitch.me/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ symptoms: symptom.split(",") }),
       });
       const data = await response.json();
       setPrediction(data.prediction || "No clear prediction");
+      setConfidence(data.confidence || "N/A");
+      setRecommendedDoctors(data.recommended_doctors || []);
       setOpenDialog(true);
     } catch (error) {
       alert("Prediction failed.");
@@ -152,50 +156,49 @@ const SymptomsForm = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button
-            type="button"
-            onClick={handleBack}
-            className="btn btn-gray"
-          >
+          <button type="button" onClick={handleBack} className="btn btn-gray">
             ← Back
           </button>
-          <button
-            type="button"
-            onClick={handlePredict}
-            disabled={loading}
-            className="btn btn-indigo"
-          >
+          <button type="button" onClick={handlePredict} disabled={loading} className="btn btn-indigo">
             {loading ? "Predicting..." : "🔍 Predict Disease"}
           </button>
-          <button
-            type="button"
-            onClick={handleSubmit}
-            disabled={loading}
-            className="btn btn-green"
-          >
+          <button type="button" onClick={handleSubmit} disabled={loading} className="btn btn-green">
             {loading ? "Submitting..." : "✅ Submit Data"}
           </button>
         </div>
       </form>
 
       {openDialog && (
-        <div className="mt-6 bg-indigo-50 p-4 rounded-lg border border-indigo-200">
-          <h3 className="text-xl font-semibold text-indigo-700 mb-2">Prediction Result</h3>
-          <p className="text-gray-700">
-            The predicted disease is: <strong>{prediction}</strong>
+        <div className="mt-6 bg-indigo-50 p-6 rounded-lg border border-indigo-200">
+          <h3 className="text-xl font-semibold text-indigo-700 mb-2">🧠 Prediction Result</h3>
+          <p className="text-gray-800 mb-1">
+            <strong>Disease:</strong> {prediction}
           </p>
-          <p className="text-sm mt-2 text-gray-600">Would you like to save this data?</p>
-          <div className="mt-4 flex gap-4">
-            <button
-              onClick={() => setOpenDialog(false)}
-              className="btn btn-gray"
-            >
+          <p className="text-gray-800 mb-3">
+            <strong>Confidence:</strong> {confidence}
+          </p>
+
+          <h4 className="text-lg font-medium text-indigo-600 mb-2">👨‍⚕️ Recommended Doctors:</h4>
+          <ul className="space-y-4">
+            {recommendedDoctors.map((doc, idx) => (
+              <li key={doc._id} className="p-4 bg-white rounded-lg shadow border">
+                <p className="font-semibold text-gray-900">{doc.fullName}</p>
+                <p className="text-sm text-gray-600">📧 {doc.email}</p>
+                <p className="text-sm text-gray-600">📞 {doc.phone}</p>
+                <p className="text-sm text-gray-600">🎓 {doc.qualifications}</p>
+                <p className="text-sm text-gray-600">🩺 Specialty: {doc.specialty}</p>
+                <p className="text-sm text-gray-600">
+                  ✅ Status: {doc.status === "true" ? "Available" : "Unavailable"}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-6 flex gap-4">
+            <button onClick={() => setOpenDialog(false)} className="btn btn-gray">
               Cancel
             </button>
-            <button
-              onClick={handleSubmit}
-              className="btn btn-indigo"
-            >
+            <button onClick={handleSubmit} className="btn btn-indigo">
               Submit Data
             </button>
           </div>
@@ -208,6 +211,225 @@ const SymptomsForm = () => {
 };
 
 export default SymptomsForm;
+
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+// import ChatBot from "../../pages/chatbot";
+// import './index.css'
+
+// const SymptomsForm = () => {
+//   const [name, setName] = useState("");
+//   const [dob, setDob] = useState("");
+//   const [gender, setGender] = useState("");
+//   const [symptom, setSymptom] = useState("");
+//   const [severity, setSeverity] = useState("");
+//   const [symptomDuration, setSymptomDuration] = useState("");
+//   const [files, setFiles] = useState([]);
+//   const [loading, setLoading] = useState(false);
+//   const [prediction, setPrediction] = useState("");
+//   const [openDialog, setOpenDialog] = useState(false);
+//   const [showChatbot, setShowChatbot] = useState(false);
+
+//   const handleFileChange = (e) => {
+//     setFiles(e.target.files);
+//   };
+
+//   const handlePredict = async () => {
+//     if (!symptom) {
+//       alert("Please enter symptoms before predicting.");
+//       return;
+//     }
+//     setLoading(true);
+//     try {
+//       const response = await fetch("https://forested-fork-wrist.glitch.me/predict", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({ symptoms: symptom.split(",") }),
+//       });
+//       const data = await response.json();
+//       setPrediction(data.prediction || "No clear prediction");
+//       setOpenDialog(true);
+//     } catch (error) {
+//       alert("Prediction failed.");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleSubmit = async () => {
+//     setOpenDialog(false);
+//     setLoading(true);
+//     const formData = new FormData();
+//     formData.append("name", name);
+//     formData.append("dob", dob);
+//     formData.append("gender", gender);
+//     formData.append("symptom", symptom);
+//     formData.append("severity", severity);
+//     formData.append("symptomDuration", symptomDuration);
+//     formData.append("predictedDisease", prediction);
+//     if (files.length > 0) {
+//       formData.append("file", files[0]);
+//     }
+//     try {
+//       const response = await fetch("http://localhost:3005/patient-symptoms/submit", {
+//         method: "POST",
+//         body: formData,
+//       });
+//       alert(response.ok ? "Form submitted successfully!" : "Error submitting form.");
+//     } catch (error) {
+//       alert("Submission failed.");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleBack = () => {
+//     window.history.back();
+//   };
+
+//   return (
+//     <div className="max-w-3xl mx-auto p-8 bg-white shadow-2xl rounded-2xl mt-10 relative overflow-hidden">
+//       <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">🩺 Symptom Submission Form</h2>
+
+//       <form className="space-y-6">
+//         <div className="grid sm:grid-cols-2 gap-6">
+//           <input
+//             type="text"
+//             placeholder="Full Name"
+//             className="input"
+//             value={name}
+//             onChange={(e) => setName(e.target.value)}
+//             required
+//           />
+//           <input
+//             type="date"
+//             className="input"
+//             value={dob}
+//             onChange={(e) => setDob(e.target.value)}
+//             required
+//           />
+//         </div>
+
+//         <select
+//           className="input"
+//           value={gender}
+//           onChange={(e) => setGender(e.target.value)}
+//           required
+//         >
+//           <option value="">Select Gender</option>
+//           <option value="male">Male</option>
+//           <option value="female">Female</option>
+//           <option value="other">Other</option>
+//         </select>
+
+//         <input
+//           type="text"
+//           placeholder="Primary Symptom (comma separated)"
+//           className="input"
+//           value={symptom}
+//           onChange={(e) => setSymptom(e.target.value)}
+//           required
+//         />
+
+//         <div className="grid sm:grid-cols-2 gap-6">
+//           <input
+//             type="number"
+//             placeholder="Severity (1-10)"
+//             className="input"
+//             min="1"
+//             max="10"
+//             value={severity}
+//             onChange={(e) => setSeverity(e.target.value)}
+//             required
+//           />
+//           <input
+//             type="text"
+//             placeholder="Duration of Symptom"
+//             className="input"
+//             value={symptomDuration}
+//             onChange={(e) => setSymptomDuration(e.target.value)}
+//             required
+//           />
+//         </div>
+
+//         <div className="flex items-center space-x-4">
+//           <label className="block w-full">
+//             <span className="text-gray-600">Upload Medical Report</span>
+//             <input
+//               type="file"
+//               className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
+//               file:rounded-full file:border-0 file:text-sm file:font-semibold
+//               file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+//               onChange={handleFileChange}
+//               accept=".pdf,.docx,.jpg,.jpeg,.png"
+//             />
+//           </label>
+//         </div>
+
+//         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+//           <button
+//             type="button"
+//             onClick={handleBack}
+//             className="btn btn-gray"
+//           >
+//             ← Back
+//           </button>
+//           <button
+//             type="button"
+//             onClick={handlePredict}
+//             disabled={loading}
+//             className="btn btn-indigo"
+//           >
+//             {loading ? "Predicting..." : "🔍 Predict Disease"}
+//           </button>
+//           <button
+//             type="button"
+//             onClick={handleSubmit}
+//             disabled={loading}
+//             className="btn btn-green"
+//           >
+//             {loading ? "Submitting..." : "✅ Submit Data"}
+//           </button>
+//         </div>
+//       </form>
+
+//       {openDialog && (
+//         <div className="mt-6 bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+//           <h3 className="text-xl font-semibold text-indigo-700 mb-2">Prediction Result</h3>
+//           <p className="text-gray-700">
+//             The predicted disease is: <strong>{prediction}</strong>
+//           </p>
+//           <p className="text-sm mt-2 text-gray-600">Would you like to save this data?</p>
+//           <div className="mt-4 flex gap-4">
+//             <button
+//               onClick={() => setOpenDialog(false)}
+//               className="btn btn-gray"
+//             >
+//               Cancel
+//             </button>
+//             <button
+//               onClick={handleSubmit}
+//               className="btn btn-indigo"
+//             >
+//               Submit Data
+//             </button>
+//           </div>
+//         </div>
+//       )}
+
+//       <ChatBot showChatbot={showChatbot} setShowChatbot={setShowChatbot} />
+//     </div>
+//   );
+// };
+
+// export default SymptomsForm;
 
 
 
