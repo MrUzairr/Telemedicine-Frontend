@@ -430,35 +430,33 @@ const Navbar = () => {
           </div>
 
           {/* Right Section: Authentication Buttons and Language Selector */}
-          <div className="flex items-center ms-auto space-x-4 space-x-reverse min-w-[200px]">
+          <div className="flex items-center ms-auto space-x-4 space-x-reverse">
             {isAuthenticated ? (
               <div className="flex space-x-4 space-x-reverse max-[550px]:space-x-2">
-                <button
-                  className="flex items-center px-3 py-2 rounded-full hover:bg-teal-100 transition-colors duration-300"
-                  onClick={handleSignout}
-                >
-                  <CgLogOut className="text-teal-600 text-xl max-[550px]:me-0" />
-                  <span
-                    className={`max-[550px]:hidden ms-1 text-gray-700 font-medium`}
-                  >
-                    {t("logout")}
-                  </span>
-                </button>
-                <button
-                  className="flex items-center px-3 py-2 rounded-full hover:bg-teal-100 transition-colors duration-300"
-                  onClick={handleSymptoms}
-                >
-                  <img
-                    src="/images/generative.png"
-                    className="w-6 h-6 max-[550px]:me-0"
-                    alt="AI Search"
-                  />
-                  <span
-                    className={`max-[550px]:hidden ms-1 text-gray-700 font-medium`}
-                  >
-                    {t("search_with_ai")}
-                  </span>
-                </button>
+               <button
+  className="px-3 py-2 rounded-full flex items-center hover:bg-teal-100 transition-colors duration-300 mobile-p-1"
+  onClick={handleSignout}
+>
+  <CgLogOut className="text-teal-600 text-xl max-[550px]:me-0" />
+  <span className="max-[550px]:hidden ms-1 text-gray-700 font-medium">
+    {t("logout")}
+  </span>
+</button>
+
+<button
+  className="px-3 py-2 rounded-full flex items-center hover:bg-teal-100 transition-colors duration-300 mobile-p-1"
+  onClick={handleSymptoms}
+>
+  <img
+    src="/images/generative.png"
+    className="w-6 h-6 max-[550px]:me-0"
+    alt="AI Search"
+  />
+  <span className="max-[550px]:hidden ms-1 text-gray-700 font-medium">
+    {t("search_with_ai")}
+  </span>
+</button>
+
               </div>
             ) : (
               <>
@@ -541,6 +539,12 @@ const Navbar = () => {
           display: flex;
           justify-content: flex-end;
         }
+          @media (max-width: 640px) {
+  .mobile-p-1 {
+    padding: 0.25rem !important; /* equivalent to p-1 */
+  }
+}
+
       `}</style>
     </div>
   );
