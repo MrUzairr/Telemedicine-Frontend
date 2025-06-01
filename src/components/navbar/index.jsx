@@ -111,8 +111,8 @@ const Navbar = () => {
 
   return (
     <div className={`flex justify-center items-center font-sans py-4 ${language === 'ar' ? 'rtl' : 'ltr'}`}>
-      <div className="nav-body bg-white h-[65px] w-full max-w-[1200px] rounded-3xl shadow-lg flex items-center px-4 sm:px-6">
-        <div className="flex items-center w-full relative">
+    <div className="nav-body bg-white h-[65px] w-full max-w-7xl rounded-3xl shadow-lg flex items-center px-4 sm:px-6">
+      <div className="flex items-center w-full relative">
           {/* Left Section: Menu Icon (Mobile) and Navigation Links (Desktop) */}
           <div className="flex items-center">
             <div className="md:hidden">
