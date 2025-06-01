@@ -83,7 +83,7 @@ const Login = () => {
             if (user.isAdmin) navigate("/admin");
             else if (user.isDoctor) navigate("/doctor");
             else navigate("/");
-          }, 1000);
+          }, 2500);
         } else {
           handleError("Invalid email or password");
           setError("Invalid email or password");
@@ -106,7 +106,7 @@ const Login = () => {
           <FaChevronLeft /> Back
         </button>
         <h2 className="text-3xl font-extrabold mb-8 text-gray-900 text-center">Sign in to your account</h2>
-        <form onSubmit={formik.handleSubmit} className="space-y-6">
+        <form onSubmit={formik.handleSubmit} className="space-y-6 text-left">
           <div>
             <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
               Email<span className="text-red-500">*</span>
