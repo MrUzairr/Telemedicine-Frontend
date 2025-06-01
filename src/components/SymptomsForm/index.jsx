@@ -16,6 +16,8 @@ const SymptomsForm = () => {
   const [recommendedDoctors, setRecommendedDoctors] = useState([]);
   const [openDialog, setOpenDialog] = useState(false);
   const [showChatbot, setShowChatbot] = useState(false);
+  const [submittingDoctorId, setSubmittingDoctorId] = useState(null); // Replace: const [loading, setLoading] = useState(false);
+
 
   const handleFileChange = (e) => {
     setFiles(e.target.files);
@@ -46,7 +48,7 @@ const SymptomsForm = () => {
   };
 
   const handleDoctorSubmit = async (doctorId) => {
-    setLoading(true);
+    setSubmittingDoctorId(doctorId);
     const formData = new FormData();
     formData.append("name", name);
     formData.append("dob", dob);
@@ -59,7 +61,7 @@ const SymptomsForm = () => {
     if (files.length > 0) {
       formData.append("file", files[0]);
     }
-
+  
     try {
       const response = await fetch("https://ten-reminiscent-sombrero.glitch.me/patient-symptoms/submit", {
         method: "POST",
@@ -69,9 +71,10 @@ const SymptomsForm = () => {
     } catch (error) {
       alert("Submission failed.");
     } finally {
-      setLoading(false);
+      setSubmittingDoctorId(null);
     }
   };
+  
 
   const handleBack = () => {
     window.history.back();
@@ -191,10 +194,10 @@ const SymptomsForm = () => {
 
                 <button
                   onClick={() => handleDoctorSubmit(doc._id)}
-                  disabled={loading}
+                  disabled={submittingDoctorId === doc._id}
                   className="mt-4 btn btn-green"
                 >
-                  {loading ? "Submitting..." : `Submit to Dr. ${doc.fullName}`}
+                  {submittingDoctorId === doc._id ? "Submitting..." : `Submit to Dr. ${doc.fullName}`}
                 </button>
               </li>
             ))}
